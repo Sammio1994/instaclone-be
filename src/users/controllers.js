@@ -16,7 +16,7 @@ const addUser = async (req, res) => {
 
  const logIn = async (req, res) => {
     try {
-        res.status(201).json({message: "success", user: req.user});
+        res.status(201).json({message: `success, welcome ${req.body.username}`, user: req.user});
     } catch (error) {
         res.status(501).json({message: error.message, error: error});
     }
