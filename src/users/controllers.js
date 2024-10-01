@@ -14,6 +14,15 @@ const addUser = async (req, res) => {
     }
  };
 
+ const logIn = async (req, res) => {
+    try {
+        res.status(201).json({message: "success", user: req.user});
+    } catch (error) {
+        res.status(501).json({message: error.message, error: error});
+    }
+ };
+
  module.exports = {
-    addUser: addUser, 
+    addUser: addUser,
+    logIn: logIn,
  };
